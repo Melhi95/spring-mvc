@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+
+            width: auto; /* Ширина таблицы */
+            font-size: 20px; /* Размер шрифта */
+            border: 1px solid #000; /* Рамка вокруг таблицы */
+            border-collapse: collapse; /* Отображать только одну рамку вокруг таблицы */
+            border-spacing: 10px; /* Расстояние между столбцами */
+        }
+        th, td {
+            padding: 10px; /* Отступы внутри ячеек */
+            border: 1px solid #000; /* Рамка вокруг ячеек */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Model</th>
+            <th>Year</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.id}"></td>
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.year}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
